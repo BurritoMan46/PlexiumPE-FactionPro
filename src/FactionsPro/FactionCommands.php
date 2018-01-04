@@ -1176,16 +1176,16 @@ class FactionCommands {
 
                 if (strtolower($args[0]) == "help") {
                     if (!isset($args[1]) || $args[1] == 1) {
-                        $sender->sendMessage(TextFormat::GRAY . "________." . TextFormat::DARK_GRAY . "[" . TextFormat::LIGHT_PURPLE . " Factions Help (1/1) " . TextFormat::DARK_GRAY . "]" . TextFormat::GRAY . ".________");
-                        $sender->sendMessage(TextFormat::DARK_PURPLE . "/f create " . TextFormat::LIGHT_PURPLE . "[name]" . TextFormat::GRAY . " Create your faction");
-                        $sender->sendMessage(TextFormat::DARK_PURPLE . "/f invite " . TextFormat::LIGHT_PURPLE . "[player name]" . TextFormat::GRAY . " Invite a player to your faction");
-                        $sender->sendMessage(TextFormat::DARK_PURPLE . "/f claim " . TextFormat::GRAY . "Claim an area");
-                        $sender->sendMessage(TextFormat::DARK_PURPLE . "/f delete " . TextFormat::GRAY . "Deletes your faction");
-                        $sender->sendMessage(TextFormat::DARK_PURPLE . "/f info " . TextFormat::LIGHT_PURPLE . "[faction]" . TextFormat::GRAY . " Displays faction information");
-                        $sender->sendMessage(TextFormat::DARK_PURPLE . "/f kick " . TextFormat::LIGHT_PURPLE . "[player]" . TextFormat::GRAY . " Kicks player from faction");
-                        $sender->sendMessage(TextFormat::DARK_PURPLE . "/f map " . TextFormat::GRAY . " Displays faction map");
-                        $sender->sendMessage(TextFormat::DARK_PURPLE . "/f chat " . TextFormat::LIGHT_PURPLE . "[c/a]" . TextFormat::GRAY . " Enables faction/ally chat");
-                        $sender->sendMessage(TextFormat::DARK_PURPLE . "/f top " . TextFormat::GRAY . "Display top 8 factions");
+                        $sender->sendMessage(TextFormat::GRAY . "________." . TextFormat::DARK_GRAY . "[" . TextFormat::RED . " Factions Help (1/1) " . TextFormat::DARK_GRAY . "]" . TextFormat::GRAY . ".________");
+                        $sender->sendMessage(TextFormat::DARK_RED . "/f create " . TextFormat::RED . "[name]" . TextFormat::GRAY . " Create your faction");
+                        $sender->sendMessage(TextFormat::DARK_RED . "/f invite " . TextFormat::RED . "[player name]" . TextFormat::GRAY . " Invite a player to your faction");
+                        $sender->sendMessage(TextFormat::DARK_RED . "/f claim " . TextFormat::GRAY . "Claim an area");
+                        $sender->sendMessage(TextFormat::DARK_RED . "/f delete " . TextFormat::GRAY . "Deletes your faction");
+                        $sender->sendMessage(TextFormat::DARK_RED . "/f info " . TextFormat::RED . "[faction]" . TextFormat::GRAY . " Displays faction information");
+                        $sender->sendMessage(TextFormat::DARK_RED . "/f kick " . TextFormat::RED . "[player]" . TextFormat::GRAY . " Kicks player from faction");
+                        $sender->sendMessage(TextFormat::DARK_RED . "/f map " . TextFormat::GRAY . " Displays faction map");
+                        $sender->sendMessage(TextFormat::DARK_RED . "/f chat " . TextFormat::RED . "[c/a]" . TextFormat::GRAY . " Enables faction/ally chat");
+                        $sender->sendMessage(TextFormat::DARK_RED . "/f top " . TextFormat::GRAY . "Display top 8 factions");
                         return true;
                     }
                 }
