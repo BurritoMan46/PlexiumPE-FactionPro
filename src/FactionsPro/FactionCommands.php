@@ -1071,8 +1071,8 @@ class FactionCommands {
                     /////////////////////////////// ABOUT ///////////////////////////////
 
                     if (strtolower($args[0] == 'about')) {
-                        $sender->sendMessage(TextFormat::GREEN . "[ORIGINAL] FactionsPro v1.3.2 by " . TextFormat::BOLD . "Tethered_");
-                        $sender->sendMessage(TextFormat::GOLD . "[MODDED] This version by MPE and " . TextFormat::BOLD . "Awzaw");
+                        $sender->sendMessage(TextFormat::GREEN . "[ORIGINAL] FactionsPro v1.3.2 by " . TextFormat::BOLD . "McpeCylixir");
+                        $sender->sendMessage(TextFormat::GOLD . "[MODDED] This version by MPE and " . TextFormat::BOLD . "McpeCylixir");
                     }
                     ////////////////////////////// CHAT ////////////////////////////////
                     if (strtolower($args[0]) == "chat" or strtolower($args[0]) == "c") {
@@ -1147,11 +1147,11 @@ class FactionCommands {
                         $message = $array["message"];
                         $leader = $this->plugin->getLeader($faction);
                         $numPlayers = $this->plugin->getNumberOfPlayers($faction);
-                        $sender->sendMessage(TextFormat::GRAY . "______." . TextFormat::DARK_GRAY . "[" . TextFormat::DARK_AQUA . "$faction" . TextFormat::DARK_GRAY . "]" . TextFormat::GRAY . ".______" . TextFormat::RESET);
-                        $sender->sendMessage(TextFormat::AQUA . "Leader: " . TextFormat::GRAY . "$leader" . TextFormat::RESET);
-                        $sender->sendMessage(TextFormat::AQUA . "Members: " . TextFormat::GRAY . "$numPlayers" . TextFormat::RESET);
-                        $sender->sendMessage(TextFormat::AQUA . "Power: " . TextFormat::GRAY . "$power" . TextFormat::RESET);
-                        $sender->sendMessage(TextFormat::AQUA . "Description: " . TextFormat::GRAY . TextFormat::UNDERLINE . "$message" . TextFormat::RESET);
+                        $sender->sendMessage(TextFormat::GRAY . "______." . TextFormat::DARK_GRAY . "[" . TextFormat::DARK_RED . "$faction" . TextFormat::DARK_GRAY . "]" . TextFormat::GRAY . ".______" . TextFormat::RESET);
+                        $sender->sendMessage(TextFormat::DARK_RED . "Leader: " . TextFormat::GRAY . "$leader" . TextFormat::RESET);
+                        $sender->sendMessage(TextFormat::DARK_RED . "Members: " . TextFormat::GRAY . "$numPlayers" . TextFormat::RESET);
+                        $sender->sendMessage(TextFormat::DARK_RED . "Power: " . TextFormat::GRAY . "$power" . TextFormat::RESET);
+                        $sender->sendMessage(TextFormat::DARK_RED . "Description: " . TextFormat::GRAY . TextFormat::UNDERLINE . "$message" . TextFormat::RESET);
                     } else {
                         if (!$this->plugin->isInFaction($playerName)) {
                             $sender->sendMessage($this->plugin->formatMessage("You must be in a faction to use this!"));
@@ -1165,11 +1165,11 @@ class FactionCommands {
                         $leader = $this->plugin->getLeader($faction);
                         $numPlayers = $this->plugin->getNumberOfPlayers($faction);
                         $faction = $this->plugin->getPlayerFaction($sender->getName());
-                        $sender->sendMessage(TextFormat::GRAY . "______." . TextFormat::DARK_GRAY . "[" . TextFormat::DARK_AQUA . "$faction" . TextFormat::DARK_GRAY . "]" . TextFormat::GRAY . ".______" . TextFormat::RESET);
-                        $sender->sendMessage(TextFormat::AQUA . "Leader: " . TextFormat::GRAY . "$leader" . TextFormat::RESET);
-                        $sender->sendMessage(TextFormat::AQUA . "Members: " . TextFormat::GRAY . "$numPlayers" . TextFormat::RESET);
-                        $sender->sendMessage(TextFormat::AQUA . "Power: " . TextFormat::GRAY . "$power" . TextFormat::RESET);
-                        $sender->sendMessage(TextFormat::AQUA . "Description: " . TextFormat::GRAY . TextFormat::UNDERLINE . "$message" . TextFormat::RESET);
+                        $sender->sendMessage(TextFormat::GRAY . "______." . TextFormat::DARK_GRAY . "[" . TextFormat::DARK_RED . "$faction" . TextFormat::DARK_GRAY . "]" . TextFormat::GRAY . ".______" . TextFormat::RESET);
+                        $sender->sendMessage(TextFormat::DARK_RED . "Leader: " . TextFormat::GRAY . "$leader" . TextFormat::RESET);
+                        $sender->sendMessage(TextFormat::DARK_RED . "Members: " . TextFormat::GRAY . "$numPlayers" . TextFormat::RESET);
+                        $sender->sendMessage(TextFormat::DARK_RED . "Power: " . TextFormat::GRAY . "$power" . TextFormat::RESET);
+                        $sender->sendMessage(TextFormat::DARK_RED . "Description: " . TextFormat::GRAY . TextFormat::UNDERLINE . "$message" . TextFormat::RESET);
                     }
                     return true;
                 }
