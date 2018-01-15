@@ -1147,7 +1147,7 @@ class FactionCommands {
                         $message = $array["message"];
                         $leader = $this->plugin->getLeader($faction);
                         $numPlayers = $this->plugin->getNumberOfPlayers($faction);
-                        $sender->sendMessage(TextFormat::GRAY . "______." . TextFormat::DARK_GRAY . "[" . TextFormat::DARK_RED . "$faction" . TextFormat::DARK_GRAY . "]" . TextFormat::GRAY . ".______" . TextFormat::RESET);
+                        $sender->sendMessage(TextFormat::GRAY . "SocialFactions Info." . TextFormat::DARK_GRAY . "[" . TextFormat::DARK_RED . "$faction" . TextFormat::DARK_GRAY . "]" . TextFormat::GRAY . ".______" . TextFormat::RESET);
                         $sender->sendMessage(TextFormat::DARK_RED . "Leader: " . TextFormat::GRAY . "$leader" . TextFormat::RESET);
                         $sender->sendMessage(TextFormat::DARK_RED . "Members: " . TextFormat::GRAY . "$numPlayers" . TextFormat::RESET);
                         $sender->sendMessage(TextFormat::DARK_RED . "Power: " . TextFormat::GRAY . "$power" . TextFormat::RESET);
@@ -1176,7 +1176,7 @@ class FactionCommands {
 
                 if (strtolower($args[0]) == "help") {
                     if (!isset($args[1]) || $args[1] == 1) {
-                        $sender->sendMessage(TextFormat::GRAY . "________." . TextFormat::DARK_GRAY . "[" . TextFormat::RED . " Factions Help (1/1) " . TextFormat::DARK_GRAY . "]" . TextFormat::GRAY . ".________");
+                        $sender->sendMessage(TextFormat::GRAY . "________." . TextFormat::DARK_GRAY . "[" . TextFormat::RED . " SocialFactions Help (1/1) " . TextFormat::DARK_GRAY . "]" . TextFormat::GRAY . ".________");
                         $sender->sendMessage(TextFormat::DARK_RED . "/f create " . TextFormat::RED . "[name]" . TextFormat::GRAY . " Create your faction");
                         $sender->sendMessage(TextFormat::DARK_RED . "/f invite " . TextFormat::RED . "[player name]" . TextFormat::GRAY . " Invite a player to your faction");
                         $sender->sendMessage(TextFormat::DARK_RED . "/f claim " . TextFormat::GRAY . "Claim an area");
@@ -1186,6 +1186,7 @@ class FactionCommands {
                         $sender->sendMessage(TextFormat::DARK_RED . "/f map " . TextFormat::GRAY . " Displays faction map");
                         $sender->sendMessage(TextFormat::DARK_RED . "/f chat " . TextFormat::RED . "[c/a]" . TextFormat::GRAY . " Enables faction/ally chat");
                         $sender->sendMessage(TextFormat::DARK_RED . "/f top " . TextFormat::GRAY . "Display top 8 factions");
+			$sender->sendMessage(TextFormat::DARK_RED . "/f promote " . TextFormat::GRAY . "Promote A Faction Member");
                         return true;
                     }
                 }
