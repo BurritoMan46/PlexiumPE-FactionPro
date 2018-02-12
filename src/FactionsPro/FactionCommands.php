@@ -841,9 +841,9 @@ class FactionCommands {
 
 
                     ////////////////////////////// ALLY SYSTEM ////////////////////////////////
-                    if (strtolower($args[0] == "enemywith")) {
+                    if (strtolower($args[0] == "enemy")) {
                         if (!isset($args[1])) {
-                            $sender->sendMessage($this->plugin->formatMessage("Usage: /f enemywith <faction>"));
+                            $sender->sendMessage($this->plugin->formatMessage("Usage: /f enemy <faction>"));
                             return true;
                         }
                         if (!$this->plugin->isInFaction($playerName)) {
@@ -877,9 +877,9 @@ class FactionCommands {
                         $sender->sendMessage($this->plugin->formatMessage("You are now enemies with $args[1]!", true));
                         $leader->sendMessage($this->plugin->formatMessage("The leader of $fac has declared your faction as an enemy", true));
                     }
-                    if (strtolower($args[0] == "allywith")) {
+                    if (strtolower($args[0] == "ally")) {
                         if (!isset($args[1])) {
-                            $sender->sendMessage($this->plugin->formatMessage("Usage: /f allywith <faction>"));
+                            $sender->sendMessage($this->plugin->formatMessage("Usage: /f ally <faction>"));
                             return true;
                         }
                         if (!$this->plugin->isInFaction($playerName)) {
@@ -930,7 +930,7 @@ class FactionCommands {
                     }
                     if (strtolower($args[0] == "unally")) {
                         if (!isset($args[1])) {
-                            $sender->sendMessage($this->plugin->formatMessage("Usage: /f breakalliancewith <faction>"));
+                            $sender->sendMessage($this->plugin->formatMessage("Usage: /f unally <faction>"));
                             return true;
                         }
                         if (!$this->plugin->isInFaction($playerName)) {
@@ -1071,8 +1071,8 @@ class FactionCommands {
                     /////////////////////////////// ABOUT ///////////////////////////////
 
                     if (strtolower($args[0] == 'about')) {
-                        $sender->sendMessage(TextFormat::GREEN . "[ORIGINAL] FactionsPro v1.3.2 by " . TextFormat::BOLD . "McpeCylixir");
-                        $sender->sendMessage(TextFormat::GOLD . "[MODDED] This version by MPE and " . TextFormat::BOLD . "McpeCylixir");
+                        $sender->sendMessage(TextFormat::GREEN . "[ORIGINAL] AversionFactions v1.2 Made for " . TextFormat::BLUE . "AversionPE");
+                        $sender->sendMessage(TextFormat::AQUA . "[MODDED] This version by MangoTEAM and " . TextFormat::BOLD . "MangoTheDev");
                     }
                     ////////////////////////////// CHAT ////////////////////////////////
                     if (strtolower($args[0]) == "chat" or strtolower($args[0]) == "c") {
@@ -1101,12 +1101,12 @@ class FactionCommands {
 						if($this->plugin->isInFaction($sender)){
 							if(isset($this->plugin->allyChatActive[$sender])){
 								unset($this->plugin->allyChatActive[$sender]);
-								$sender->sendMessage($this->plugin->formatMessage("§7Chat da aliança desativado!", false));
+								$sender->sendMessage($this->plugin->formatMessage("§7ally chat has been disabled!", false));
 								return true;
 							}
 							else{
 								$this->plugin->allyChatActive[$sender] = 1;
-								$sender->sendMessage($this->plugin->formatMessage("§7Chat da aliança ativado!", false));
+								$sender->sendMessage($this->plugin->formatMessage("§7ally chat has been enabled!", false));
 								return true;
 							}
 						}
@@ -1116,7 +1116,7 @@ class FactionCommands {
 						}
 					}
 
-                /////////////////////////////// MAP, map by Primus (no compass) ////////////////////////////////
+                /////////////////////////////// MAP ////////////////////////////////
 					// Coupon for compass: G1wEmEde0mp455
 
 					if(strtolower($args[0] == "map")) {
@@ -1150,7 +1150,7 @@ class FactionCommands {
                         $sender->sendMessage(TextFormat::GRAY . "______." . TextFormat::DARK_GRAY . "[" . TextFormat::DARK_RED . "$faction" . TextFormat::DARK_GRAY . "]" . TextFormat::GRAY . ".______" . TextFormat::RESET);
                         $sender->sendMessage(TextFormat::DARK_RED . "Leader: " . TextFormat::GRAY . "$leader" . TextFormat::RESET);
                         $sender->sendMessage(TextFormat::DARK_RED . "Members: " . TextFormat::GRAY . "$numPlayers" . TextFormat::RESET);
-                        $sender->sendMessage(TextFormat::DARK_RED . "Power: " . TextFormat::GRAY . "$power" . TextFormat::RESET);
+                        $sender->sendMessage(TextFormat::DARK_BLUE . "Power: " . TextFormat::GRAY . "$power" . TextFormat::RESET);
                         $sender->sendMessage(TextFormat::DARK_RED . "Description: " . TextFormat::GRAY . TextFormat::UNDERLINE . "$message" . TextFormat::RESET);
                     } else {
                         if (!$this->plugin->isInFaction($playerName)) {
@@ -1168,7 +1168,7 @@ class FactionCommands {
                         $sender->sendMessage(TextFormat::GRAY . "______." . TextFormat::DARK_GRAY . "[" . TextFormat::DARK_RED . "$faction" . TextFormat::DARK_GRAY . "]" . TextFormat::GRAY . ".______" . TextFormat::RESET);
                         $sender->sendMessage(TextFormat::DARK_RED . "Leader: " . TextFormat::GRAY . "$leader" . TextFormat::RESET);
                         $sender->sendMessage(TextFormat::DARK_RED . "Members: " . TextFormat::GRAY . "$numPlayers" . TextFormat::RESET);
-                        $sender->sendMessage(TextFormat::DARK_RED . "Power: " . TextFormat::GRAY . "$power" . TextFormat::RESET);
+                        $sender->sendMessage(TextFormat::DARK_BLUE . "Power: " . TextFormat::GRAY . "$power" . TextFormat::RESET);
                         $sender->sendMessage(TextFormat::DARK_RED . "Description: " . TextFormat::GRAY . TextFormat::UNDERLINE . "$message" . TextFormat::RESET);
                     }
                     return true;
@@ -1176,7 +1176,7 @@ class FactionCommands {
 
                 if (strtolower($args[0]) == "help") {
                     if (!isset($args[1]) || $args[1] == 1) {
-                        $sender->sendMessage(TextFormat::GRAY . "________." . TextFormat::DARK_GRAY . "[" . TextFormat::RED . " Factions Help (1/1) " . TextFormat::DARK_GRAY . "]" . TextFormat::GRAY . ".________");
+                        $sender->sendMessage(TextFormat::GRAY . "________." . TextFormat::DARK_GRAY . "[" . TextFormat::AQUA . " Factions Help (1/1) " . TextFormat::DARK_GRAY . "]" . TextFormat::GRAY . ".________");
                         $sender->sendMessage(TextFormat::DARK_RED . "/f create " . TextFormat::RED . "[name]" . TextFormat::GRAY . " Create your faction");
                         $sender->sendMessage(TextFormat::DARK_RED . "/f invite " . TextFormat::RED . "[player name]" . TextFormat::GRAY . " Invite a player to your faction");
                         $sender->sendMessage(TextFormat::DARK_RED . "/f claim " . TextFormat::GRAY . "Claim an area");
@@ -1186,6 +1186,10 @@ class FactionCommands {
                         $sender->sendMessage(TextFormat::DARK_RED . "/f map " . TextFormat::GRAY . " Displays faction map");
                         $sender->sendMessage(TextFormat::DARK_RED . "/f chat " . TextFormat::RED . "[c/a]" . TextFormat::GRAY . " Enables faction/ally chat");
                         $sender->sendMessage(TextFormat::DARK_RED . "/f top " . TextFormat::GRAY . "Display top 8 factions");
+			$sender->sendMessage(TextFormat::DARK_RED . "/f sethome " . TextFormat::GRAY . "Sethomes a faction home");
+			$sender->sendMessage(TextFormat::DARK_RED . "/f home " . TextFormat::GRAY . "Teleport to your faction home");
+			$sender->sendMessage(TextFormat::DARK_RED . "/f ally " . TextFormat::GRAY . "Ally a faction");
+			$sender->sendMessage(TextFormat::DARK_RED . "/f unally " . TextFormat::GRAY . "Unally a faction");
                         return true;
                     }
                 }
