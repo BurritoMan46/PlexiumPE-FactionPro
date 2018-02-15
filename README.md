@@ -1,2 +1,1 @@
-# PlexiumPE-FactionPro
-PlexiumPE-FactionPro | Custom! | Enjoy! 
+Faction Plugin
