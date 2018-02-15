@@ -8,6 +8,6 @@ softdepend:
     - PureChat
     - AntiSpamPro
 commands:
-    f: { description: 'use /f help for all parameters', permission: f.command }
+    f: { description: 'use /f help for all faction commands!', permission: f.command }
 permissions:
     f.command: { default: true, description: 'Allow use of all faction commands' }
