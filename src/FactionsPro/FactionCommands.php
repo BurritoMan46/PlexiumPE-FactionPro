@@ -455,9 +455,9 @@ class FactionCommands {
                     if (strtolower($args[0]) == 'top') {
                         $this->plugin->sendListOfTop10FactionsTo($sender);
                     }
-                    if (strtolower($args[0]) == 'forcedelete') {
+                    if (strtolower($args[0]) == 'opdelete') {
                         if (!isset($args[1])) {
-                            $sender->sendMessage($this->plugin->formatMessage("Usage: /f forcedelete <faction>"));
+                            $sender->sendMessage($this->plugin->formatMessage("Usage: /f opdelete <faction>"));
                             return true;
                         }
                         if (!$this->plugin->factionExists($args[1])) {
@@ -477,9 +477,9 @@ class FactionCommands {
                         $this->plugin->db->query("DELETE FROM home WHERE faction='$args[1]';");
                         $sender->sendMessage($this->plugin->formatMessage("Unwanted faction was successfully deleted and their faction plot was unclaimed!", true));
                     }
-                    if (strtolower($args[0]) == 'addstrto') {
+                    if (strtolower($args[0]) == 'addpower') {
                         if (!isset($args[1]) or ! isset($args[2])) {
-                            $sender->sendMessage($this->plugin->formatMessage("Usage: /f addstrto <faction> <STR>"));
+                            $sender->sendMessage($this->plugin->formatMessage("Usage: /f addpower <faction> <power>"));
                             return true;
                         }
                         if (!$this->plugin->factionExists($args[1])) {
@@ -491,7 +491,7 @@ class FactionCommands {
                             return true;
                         }
                         $this->plugin->addFactionPower($args[1], $args[2]);
-                        $sender->sendMessage($this->plugin->formatMessage("Successfully added $args[2] STR to $args[1]", true));
+                        $sender->sendMessage($this->plugin->formatMessage("Successfully added $args[2] Power to $args[1]", true));
                     }
                     if (strtolower($args[0]) == 'pf') {
                         if (!isset($args[1])) {
@@ -967,9 +967,9 @@ class FactionCommands {
                             $leader->sendMessage($this->plugin->formatMessage("The leader of $fac broke the alliance with your faction $args[1]", false));
                         }
                     }
-                    if (strtolower($args[0] == "forceunclaim")) {
+                    if (strtolower($args[0] == "opunclaim")) {
                         if (!isset($args[1])) {
-                            $sender->sendMessage($this->plugin->formatMessage("Usage: /f forceunclaim <faction>"));
+                            $sender->sendMessage($this->plugin->formatMessage("Usage: /f opunclaim <faction>"));
                             return true;
                         }
                         if (!$this->plugin->factionExists($args[1])) {
@@ -1071,8 +1071,7 @@ class FactionCommands {
                     /////////////////////////////// ABOUT ///////////////////////////////
 
                     if (strtolower($args[0] == 'about')) {
-                        $sender->sendMessage(TextFormat::GREEN . "[ORIGINAL] AversionFactions v1.2 Made for " . TextFormat::BLUE . "AversionPE");
-                        $sender->sendMessage(TextFormat::AQUA . "[MODDED] This version by MangoTEAM and " . TextFormat::BOLD . "MangoTheDev");
+                        $sender->sendMessage(TextFormat::GREEN . "[ORIGINAL] Factions v1.2 Made for " . TextFormat::BLUE . "ImperialFac"(;
                     }
                     ////////////////////////////// CHAT ////////////////////////////////
                     if (strtolower($args[0]) == "chat" or strtolower($args[0]) == "c") {
@@ -1148,10 +1147,10 @@ class FactionCommands {
                         $leader = $this->plugin->getLeader($faction);
                         $numPlayers = $this->plugin->getNumberOfPlayers($faction);
                         $sender->sendMessage(TextFormat::GRAY . "______." . TextFormat::DARK_GRAY . "[" . TextFormat::DARK_RED . "$faction" . TextFormat::DARK_GRAY . "]" . TextFormat::GRAY . ".______" . TextFormat::RESET);
-                        $sender->sendMessage(TextFormat::DARK_RED . "Leader: " . TextFormat::GRAY . "$leader" . TextFormat::RESET);
+                        $sender->sendMessage(TextFormat::RED . "Leader: " . TextFormat::GRAY . "$leader" . TextFormat::RESET);
                         $sender->sendMessage(TextFormat::DARK_RED . "Members: " . TextFormat::GRAY . "$numPlayers" . TextFormat::RESET);
-                        $sender->sendMessage(TextFormat::DARK_BLUE . "Power: " . TextFormat::GRAY . "$power" . TextFormat::RESET);
-                        $sender->sendMessage(TextFormat::DARK_RED . "Description: " . TextFormat::GRAY . TextFormat::UNDERLINE . "$message" . TextFormat::RESET);
+                        $sender->sendMessage(TextFormat::DARK_RED . "Power: " . TextFormat::GRAY . "$power" . TextFormat::RESET);
+                        $sender->sendMessage(TextFormat::RED . "Description: " . TextFormat::GRAY . TextFormat::UNDERLINE . "$message" . TextFormat::RESET);
                     } else {
                         if (!$this->plugin->isInFaction($playerName)) {
                             $sender->sendMessage($this->plugin->formatMessage("You must be in a faction to use this!"));
@@ -1168,7 +1167,7 @@ class FactionCommands {
                         $sender->sendMessage(TextFormat::GRAY . "______." . TextFormat::DARK_GRAY . "[" . TextFormat::DARK_RED . "$faction" . TextFormat::DARK_GRAY . "]" . TextFormat::GRAY . ".______" . TextFormat::RESET);
                         $sender->sendMessage(TextFormat::DARK_RED . "Leader: " . TextFormat::GRAY . "$leader" . TextFormat::RESET);
                         $sender->sendMessage(TextFormat::DARK_RED . "Members: " . TextFormat::GRAY . "$numPlayers" . TextFormat::RESET);
-                        $sender->sendMessage(TextFormat::DARK_BLUE . "Power: " . TextFormat::GRAY . "$power" . TextFormat::RESET);
+                        $sender->sendMessage(TextFormat::DARK_RED . "Power: " . TextFormat::GRAY . "$power" . TextFormat::RESET);
                         $sender->sendMessage(TextFormat::DARK_RED . "Description: " . TextFormat::GRAY . TextFormat::UNDERLINE . "$message" . TextFormat::RESET);
                     }
                     return true;
