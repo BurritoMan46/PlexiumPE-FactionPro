@@ -72,7 +72,7 @@ class FactionMain extends PluginBase implements Listener {
             "AllyLimitPerFaction" => 5,
             "TheDefaultPowerEveryFactionStartsWith" => 0,
             "EnableOverClaim" => true,
-            "ClaimWorlds" => [],
+            "ClaimWorlds" => world,
             "AllowChat" => true,
             "AllowFactionPvp" => false,
             "AllowAlliedPvp" => false,
@@ -343,9 +343,9 @@ class FactionMain extends PluginBase implements Listener {
 
             if ($this->prefs->get("EnableOverClaim")) {
                 if ($power_sender < $power_claimedBy) {
-                    $sender->sendMessage($this->formatMessage("This area is aleady claimed by $claimedBy with $power_claimedBy STR. Your faction has $power_sender power. You don't have enough power to overclaim this plot."));
+                    $sender->sendMessage($this->formatMessage("This area is aleady claimed by $claimedBy with $power_claimedBy Power. Your faction has $power_sender power. You don't have enough power to overclaim this plot."));
                 } else {
-                    $sender->sendMessage($this->formatMessage("This area is aleady claimed by $claimedBy with $power_claimedBy STR. Your faction has $power_sender power. Type /f overclaim to overclaim this plot if you want."));
+                    $sender->sendMessage($this->formatMessage("This area is aleady claimed by $claimedBy with $power_claimedBy Power. Your faction has $power_sender power. Type /f overclaim to overclaim this plot if you want."));
                 }
                 return false;
             } else {
