@@ -1071,7 +1071,7 @@ class FactionCommands {
                     /////////////////////////////// ABOUT ///////////////////////////////
 
                     if (strtolower($args[0] == 'about')) {
-                        $sender->sendMessage(TextFormat::GREEN . "[ORIGINAL] Factions v1.2 Made for " . TextFormat::BLUE . "ImperialFac"(;
+                        $sender->sendMessage(TextFormat::DARK_RED . "[Imperial] Factions v1.0 Made for " . TextFormat::BLUE . "ImperialFac"(;
                     }
                     ////////////////////////////// CHAT ////////////////////////////////
                     if (strtolower($args[0]) == "chat" or strtolower($args[0]) == "c") {
@@ -1165,10 +1165,10 @@ class FactionCommands {
                         $numPlayers = $this->plugin->getNumberOfPlayers($faction);
                         $faction = $this->plugin->getPlayerFaction($sender->getName());
                         $sender->sendMessage(TextFormat::GRAY . "______." . TextFormat::DARK_GRAY . "[" . TextFormat::DARK_RED . "$faction" . TextFormat::DARK_GRAY . "]" . TextFormat::GRAY . ".______" . TextFormat::RESET);
-                        $sender->sendMessage(TextFormat::DARK_RED . "Leader: " . TextFormat::GRAY . "$leader" . TextFormat::RESET);
+                        $sender->sendMessage(TextFormat::RED . "Leader: " . TextFormat::GRAY . "$leader" . TextFormat::RESET);
                         $sender->sendMessage(TextFormat::DARK_RED . "Members: " . TextFormat::GRAY . "$numPlayers" . TextFormat::RESET);
                         $sender->sendMessage(TextFormat::DARK_RED . "Power: " . TextFormat::GRAY . "$power" . TextFormat::RESET);
-                        $sender->sendMessage(TextFormat::DARK_RED . "Description: " . TextFormat::GRAY . TextFormat::UNDERLINE . "$message" . TextFormat::RESET);
+                        $sender->sendMessage(TextFormat::RED . "Description: " . TextFormat::GRAY . TextFormat::UNDERLINE . "$message" . TextFormat::RESET);
                     }
                     return true;
                 }
@@ -1189,6 +1189,8 @@ class FactionCommands {
 			$sender->sendMessage(TextFormat::DARK_RED . "/f home " . TextFormat::GRAY . "Teleport to your faction home");
 			$sender->sendMessage(TextFormat::DARK_RED . "/f ally " . TextFormat::GRAY . "Ally a faction");
 			$sender->sendMessage(TextFormat::DARK_RED . "/f unally " . TextFormat::GRAY . "Unally a faction");
+			$sender->sendMessage(TextFormat::DARK_RED . "/f about " . TextFormat::GRAY . "Checks the plugin version");
+			$sender->sendMessage(TextFormat::DARK_RED . "/f war " . TextFormat::RED . "[faction]" . TextFormat::GRAY . "War a faction"
                         return true;
                     }
                 }
